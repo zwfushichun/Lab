@@ -36,12 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Dapper.dll</HintPath>
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="Dapper.Extension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Dapper.Extension.dll</HintPath>
+      <HintPath>..\packages\Dapper.Extension.1.0.0.1\lib\net45\Dapper.Extension.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.10.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.10.0\lib\net45\Google.Protobuf.dll</HintPath>
