@@ -1,0 +1,47 @@
+﻿syntax = "proto3"; 
+package GrpcLibrary;
+
+service GrpcService {
+  rpc SayHello (HelloRequest) returns (stream HelloResponse) {}
+}
+  
+message HelloRequest {
+  int32 Id = 1;
+}
+
+message HelloResponse {
+  repeated CustomerOutput Customers = 1;
+}
+ 
+message CustomerOutput {
+	int32 Id = 1;
+	//string GuidId=2;
+	int32 ParentCustomerId=3;
+	string Code=4;
+	string CnName=5;
+	string EnName=6;
+	string ForShort=7;
+	int32 CityId=8;
+	string Provice=9;
+	string ZipCode=10;
+	string AOE=11;
+	string CnAddress=12;
+	string EnAddress=13;
+	int32 CustomerQuality=14;
+	int32 SOURCE=15;
+	int32 Quality=16;
+	int32 Trade=17;
+	string AgentTransAgreementDate=18;
+	int32 CustomerBlackLevel=19;
+	string CustomerBlackLevelReason=20;
+	bool NeedWarning=21;
+	string WarningTitle=22;
+	string WarningContent=23;
+	int32 SupplierBlackLevel=24;
+	string InvoiceTitle=25;
+	string TaxRegNo=26;
+	string JingMaoNo=27;
+	string LegalPerson=28;
+	bool OverseaAssignFrofit=29;
+	bool RealCustomer=30;
+}

@@ -1,0 +1,14 @@
+﻿syntax = "proto3";
+package GrpcLibrary;
+
+service GrpcService1 {
+  rpc Test1 (HelloRequest1) returns (HelloResponse1) {}
+}
+  
+message HelloRequest1 {
+  int32 Id = 1;
+}
+ 
+message HelloResponse1 { 
+	string TestName=2; 
+}
