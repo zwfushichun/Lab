@@ -18,9 +18,12 @@ namespace OcelotDemo
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment _env;
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            _env = env;
         }
 
         public IConfiguration Configuration { get; }
@@ -29,7 +32,7 @@ namespace OcelotDemo
         {
             services.AddControllers();
             services.AddOcelot(new ConfigurationBuilder()
-                .AddJsonFile("ocelot.json")
+                .AddOcelot(_env)
                 .Build());
         }
 
@@ -40,9 +43,9 @@ namespace OcelotDemo
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseOcelot();
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
