@@ -17,13 +17,10 @@ using Ocelot.Middleware;
 namespace OcelotDemo
 {
     public class Startup
-    {
-        private readonly IWebHostEnvironment _env;
-
-        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+    {  
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            _env = env;
         }
 
         public IConfiguration Configuration { get; }
@@ -32,7 +29,7 @@ namespace OcelotDemo
         {
             services.AddControllers();
             services.AddOcelot(new ConfigurationBuilder()
-                .AddOcelot(_env)
+                .AddJsonFile("ocelot.json")
                 .Build());
         }
 
